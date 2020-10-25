@@ -1,0 +1,225 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+body {
+  align-items: center;
+  animation: mb 3s alternate infinite;
+  background-image: radial-gradient(#ee786e 10%, #fceeb5 11%);
+  background-position: 2.5em 2em;
+  background-size: 5em 5em;
+  display: flex;
+  flex-direction: column;
+  height: 95vh;
+  justify-content: center;
+}
+body::after {
+  background-image: radial-gradient(#a2ccb6 10%, rgba(252, 238, 181, 0) 11%);
+  background-size: 5em 5em;
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+h1,
+div {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  animation: month 6s alternate infinite;
+  margin-bottom: 0.1em;
+  color: #a2ccb6;
+  font-size: 3rem;
+  text-shadow: 0 -0.05em #a2ccb6;
+  transform: translatez(1.6em) translatey(-0.2em);
+}
+.date {
+  animation: date 6s alternate infinite;
+  color: #a2ccb6;
+  font-size: 10em;
+  margin-top: -0.1em;
+  text-shadow: 0 -0.04em #ee786e;
+  transform: translatey(-0.2em) translatez(0.1em);
+}
+.container {
+  perspective: 400px;
+}
+.card {
+  animation: card 6s alternate infinite;
+  background-color: #fceeb5;
+  border-radius: 0.3em;
+  border: 0.2em solid #ee786e;
+  box-shadow: 0 -0.2em 0 0.4em #a2ccb6;
+  font-family: "Fredoka One", cursive;
+  padding: 5em 4em;
+  position: relative;
+  top: 1em;
+  transform-style: preserve-3d;
+  transform: rotateX(-10deg);
+}
+.card:first-line {
+  color: #ee786e;
+}
+.cake {
+  bottom: 0;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%) translatez(3.5em);
+  width: calc(70% - (1 * 4em));
+  animation: cm 6s alternate infinite;
+}
+.cake * {
+  border-radius: 0.4em 0.4em 0.1em 0.1em;
+  margin: 0 auto;
+}
+.cake .layer.top {
+  background-color: #ee786e;
+  border-radius: 50%;
+  height: 2em;
+  position: relative;
+  top: 1.5em;
+  width: 89%;
+}
+.cake .layer.top .candle {
+  background: #a2ccb6;
+  bottom: 1.2em;
+  height: 2.6em;
+  left: 50%;
+  position: absolute;
+  transform: translatex(-50%);
+  width: 0.4em;
+}
+.cake .layer.top .candle::after {
+  background-color: #ee786e;
+  border-radius: 0 75% 75% 75%;
+  content: "";
+  height: 1em;
+  left: -0.05em;
+  position: absolute;
+  top: -0.8em;
+  transform: rotatex(50deg) rotatey(45deg);
+  width: inherit;
+}
+.cake .layer._1 {
+  border-radius: 1em 1em 10% 10%;
+  height: calc(10 * (4em / 6));
+  background-color: #a2ccb6;
+  width: 90%;
+  background-size: 10% 10%;
+}
+.cake .layer._1 .piece {
+  position: relative;
+  top: 0.8em;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  perspective: 200px;
+}
+.cake .layer._1 .piece::after,
+.cake .layer._1 .piece::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 100%;
+}
+.cake .layer._1 .piece::after {
+  left: 48%;
+  transform: skewy(28.5deg) rotateY(-19deg);
+  background-image: linear-gradient(
+    #ee786e 4%,
+    #fceeb5 5%,
+    #fceeb5 20%,
+    #ee786e 21%,
+    #ee786e 35%,
+    #fceeb5 36%,
+    #fceeb5 45%,
+    #ee786e 46%,
+    #ee786e 50%,
+    #fceeb5 51%,
+    #fceeb5 55%,
+    #ee786e 56%,
+    #ee786e 60%,
+    #fceeb5 61%,
+    #fceeb5 65%,
+    #ee786e 66%,
+    #ee786e 70%,
+    #fceeb5 71%,
+    #fceeb5 78%,
+    #ee786e 79%,
+    #ee786e 86%,
+    #fceeb5 87%
+  );
+}
+.cake .layer._1 .piece::before {
+  left: 2%;
+  transform: skewy(-28.5deg) rotateY(19deg);
+  background-image: linear-gradient(
+    #ee786e 4%,
+    #fbe89c 5%,
+    #fbe89c 20%,
+    #eb6357 21%,
+    #eb6357 35%,
+    #fbe89c 36%,
+    #fbe89c 45%,
+    #eb6357 46%,
+    #eb6357 50%,
+    #fbe89c 51%,
+    #fbe89c 55%,
+    #eb6357 56%,
+    #eb6357 60%,
+    #fbe89c 61%,
+    #fbe89c 65%,
+    #eb6357 66%,
+    #eb6357 70%,
+    #fbe89c 71%,
+    #fbe89c 78%,
+    #eb6357 79%,
+    #eb6357 86%,
+    #fceeb5 87%
+  );
+}
+.cake .layer.base {
+  position: relative;
+  width: 90%;
+  bottom: 1em;
+  z-index: -1;
+  border-radius: 50%;
+  height: 1.5em;
+  background-image: linear-gradient(
+    to right,
+    #a2ccb6 40%,
+    #fceeb5 40%,
+    #fceeb5 40% 51%,
+    #a2ccb6 52%
+  );
+}
+@keyframes mb {
+  to {
+    background-position: 2.3em 1.8em;
+  }
+}
+@keyframes month {
+  to {
+    text-shadow: 0 -0.01em #a2ccb6;
+  }
+}
+@keyframes date {
+  to {
+    margin-top: -0.2em;
+    text-shadow: 0 -0.01em #ee786e;
+    transform: translatey(-0.2em) translatez(0.3em);
+  }
+}
+@keyframes card {
+  to {
+    transform: rotateX(-5deg);
+  }
+}
+@keyframes cm {
+  to {
+    transform: translateX(-50%) translatez(3.15em);
+  }
+}
